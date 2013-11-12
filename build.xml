@@ -1,0 +1,43 @@
+<project name="${plugin.id}" basedir="." default="default">
+  <!-- Import the subfloor-pkg.xml file which contains all the default ant targets -->
+  <import file="build-res/subfloor-pkg.xml" />
+  <import file="build-res/subfloor-js.xml"/>
+
+  <!-- location to expand the zipped contents of js dependencies (to be available for testing) -->
+  <property name="js.expanded.lib.dir" value="package-res/resources/web/app/lib"/>
+
+  <property name="js.requires.node" value="true"/>
+  <property name="js.requires.karma" value="true"/>
+  <property name="js.karma.config" value="config/karma.conf.js"/>
+
+  <target name="resolve-js" depends="resolve,subfloor-js.resolve-js">
+    <unzip dest="${js.expanded.lib.dir}" overwrite="true">
+      <fileset file="${js.lib.dir}/*.zip" />
+      <patternset>
+        <exclude name="**/*.jar"/>
+        <exclude name="**/plugin*.xml"/>
+        <exclude name="**/settings.xml"/>
+        <exclude name="**/themes.xml"/>
+      </patternset>
+    </unzip>
+  </target>
+
+  <target name="clean-js" depends="subfloor-js.clean-js">
+    <delete dir="${js.expanded.lib.dir}" />
+  </target>
+
+
+  <target name="test-js" depends="">
+    <!-- need nodejs to be available -->
+    <!-- need karma to be available -->
+
+    <exec executable="karma">
+      <arg value="start"/>
+      <arg value="${js.karma.config}"/>
+      <!-- if we are running via ant, then assume we must 'single-run' -->
+      <arg value="--single-run"/>
+    </exec>
+
+  </target>
+
+</project>

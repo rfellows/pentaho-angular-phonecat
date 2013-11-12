@@ -1,0 +1,1 @@
+requireCfg['paths']['phonecat'] = CONTEXT_PATH+'content/phonecat/app/js';

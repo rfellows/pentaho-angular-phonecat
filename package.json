@@ -1,0 +1,10 @@
+{
+  "name": "sample",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-junit-reporter": "~0.1.0",
+    "karma-coverage": "~0.1.2"
+  }
+}

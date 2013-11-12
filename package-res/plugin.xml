@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="sample">
+
+  <static-paths>
+    <static-path url="/sample/app" localFolder="app"/>
+  </static-paths>
+
+  <external-resources>
+    <file context="requirejs">content/sample/app/sample-require-js-cfg.js</file>
+  </external-resources>
+
+</plugin>
