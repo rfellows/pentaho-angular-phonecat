@@ -14,12 +14,12 @@ requirejs.config({
 
   baseUrl: 'base/app',
   paths: {
-    'common-ui/angular': 'lib/common-ui/resources/web/angular/angular',
-    'common-ui/angular-resource': 'lib/common-ui/resources/web/angular/angular-resource',
-    'common-ui/angular-route': 'lib/common-ui/resources/web/angular/angular-route',
-    'common-ui/angular-ui-bootstrap': 'lib/common-ui/resources/web/bootstrap/ui-bootstrap-tpls-0.6.0.min',
-    'angular-mocks': 'lib/common-ui/resources/web/angular/angular-mocks',
-    'angular-scenario': 'lib/common-ui/resources/web/angular/angular-scenario',
+    'common-ui/angular': 'lib/provided/common-ui/resources/web/angular/angular',
+    'common-ui/angular-resource': 'lib/provided/common-ui/resources/web/angular/angular-resource',
+    'common-ui/angular-route': 'lib/provided/common-ui/resources/web/angular/angular-route',
+    'common-ui/angular-ui-bootstrap': 'lib/provided/common-ui/resources/web/bootstrap/ui-bootstrap-tpls-0.6.0.min',
+    'angular-mocks': 'lib/provided/common-ui/resources/web/angular/angular-mocks',
+    'angular-scenario': 'lib/provided/common-ui/resources/web/angular/angular-scenario',
     'phonecat': 'js'
   },
 

@@ -2,11 +2,11 @@
 <plugin title="sample">
 
   <static-paths>
-    <static-path url="/sample/app" localFolder="app"/>
+    <static-path url="/sample/resources" localFolder="resources"/>
   </static-paths>
 
   <external-resources>
-    <file context="requirejs">content/sample/app/sample-require-js-cfg.js</file>
+    <file context="requirejs">content/sample/resources/web/app/sample-require-js-cfg.js</file>
   </external-resources>
 
 </plugin>
