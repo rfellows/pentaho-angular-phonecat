@@ -18,19 +18,16 @@ pen.define([
 
   // return angular.module('phonecatServices', ['ngResource']).
 
-  var services = function($serviceProvider) {
+  var factories = function($factoryProvider) {
 
-    $serviceProvider('Phone', ['$resource', function($resource) {
+    $factoryProvider('Phone', ['$resource', function($resource) {
 
-      var rec = $resource(Util.buildResourceUrl('phones/:phoneId.json'), {}, {
+      return $resource(Util.buildResourceUrl('phones/:phoneId.json'), {}, {
         query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
       });
-
-      $.extend(this, rec);
-
     }]);
   };
 
-  return services;
+  return factories;
 
 });

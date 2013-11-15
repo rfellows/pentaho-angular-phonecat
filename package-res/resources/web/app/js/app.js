@@ -13,7 +13,7 @@ var deps = [
 
 pen.define(deps, function(angular, Route, AnimatedAngularPluginHandler, controllers, services, filters, Util){
   'use strict';
-	var app = angular.module('phonecatApp', ['ui.bootstrap', 'ngRoute', 'ngAnimate', 'ngResource']);
+	var app = AnimatedAngularPluginHandler.module('phonecatApp', ['ui.bootstrap', 'ngResource']);
 
 	// app.config(['$routeProvider', function($routeProvider) {
 	//   // $routeProvider.
@@ -36,10 +36,10 @@ pen.define(deps, function(angular, Route, AnimatedAngularPluginHandler, controll
           });
   }
 
-  app.getRoutes = routes;
-  app.getControllers = controllers;
-  app.getServices = services;
-  app.getFilters = filters;
-
-	return app;
+	return {
+    routerCallback : routes,
+    controllerCallback : controllers,
+    factoryCallback : services,
+    filterCallback : filters
+  };
 });

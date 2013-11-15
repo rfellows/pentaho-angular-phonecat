@@ -5,17 +5,11 @@ pen.define(["common-ui/angular","common-ui/angular-resource"], function(angular,
 
   var filters = function($filterProvider) {
 
-    // $filterProvider.register('checkmark', function() {
-    //   return function(input) {
-    //     return input ? '\u2713' : '\u2718';
-    //   }
-    // });
     $filterProvider('checkmark', function() {
       return function(input) {
         return input ? '\u2713' : '\u2718';
       }
     });
-
   };
 
   return filters;
