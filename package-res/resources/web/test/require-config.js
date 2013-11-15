@@ -20,6 +20,13 @@ requirejs.config({
     'common-ui/angular-ui-bootstrap': 'lib/provided/common-ui/resources/web/bootstrap/ui-bootstrap-tpls-0.6.0.min',
     'angular-mocks': 'lib/provided/common-ui/resources/web/angular/angular-mocks',
     'angular-scenario': 'lib/provided/common-ui/resources/web/angular/angular-scenario',
+
+    'common-ui/PluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/pluginHandler',
+    'common-ui/AngularPluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/angularPluginHandler',
+    'common-ui/angular-animate': 'lib/provided/common-ui/resources/web/angular/angular-animate',
+    'common-ui/jquery': 'lib/provided/common-ui/resources/web/jquery/jquery-1.9.1.min',
+    'common-ui/AnimatedAngularPluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/animatedAngularPluginHandler',
+
     'phonecat': 'js'
   },
 
@@ -28,7 +35,11 @@ requirejs.config({
     'common-ui/angular-resource': { deps: ['common-ui/angular'], exports: 'Resource' },
     'common-ui/angular-route': { deps: ['common-ui/angular'], exports: 'Route' },
     'common-ui/angular-ui-bootstrap': { deps: ['common-ui/angular'] },
-    'angular-mocks': { deps: ['common-ui/angular-resource'] }
+    'angular-mocks': { deps: ['common-ui/angular-resource'] },
+    
+    'common-ui/jquery': { exports: '$' },
+    'common-ui/PluginHandler': { deps: ['common-ui/jquery'] },
+    'common-ui/angular-animate': { deps: ['common-ui/angular'] }
   },
 
   // ask Require.js to load these files (all our tests)

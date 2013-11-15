@@ -56,6 +56,32 @@
       </else>
     </if>
   </target>
+<!-- 
+  <target name="dist-js" depends="quick-build.js, subfloor-js.dist-js">
+  </target>
+
+  <target name="quick-build.js" description="Builds debug JS modules for development">
+    <delete dir="${js.module.script.agg.dir}/app" />
+    <delete dir="${js.build.output.dir}" />
+    <copy todir="${js.module.script.agg.dir}/app" overwrite="true">
+      <fileset dir="${js.module.script.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </copy>
+    <path id="build.classpath">
+      <fileset dir="${js.expanded.lib.dir}/pentaho-js-build/libs">
+        <include name="*.jar" />
+      </fileset>
+    </path>
+    <java classname="org.mozilla.javascript.tools.shell.Main"
+                fork="true"
+                classpathref="build.classpath"
+                failonerror="true"
+                maxmemory="1024m"
+                args="${js.expanded.lib.dir}/pentaho-js-build/r.js -o build-res/javascript.build.js">
+    </java>
+  </target>
+ -->
 
   <!-- Override assembly of the artifacts to be packaged so we can remove un-needed js files -->
   <target name="assemble" depends="assemble.init,assemble.copy-libs">

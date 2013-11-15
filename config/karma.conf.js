@@ -21,20 +21,20 @@ module.exports = function (config) {
     autoWatch: true,
 
     browsers: ['Chrome'],
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'/*, 'coverage'*/],
 
-    preprocessors: {
-      // source files, that you wanna generate coverage for
-      // do not include tests or libraries
-      // (these files will be instrumented by Istanbul)
-      'app/js/**/*.js': ['coverage']
-    },
+    // preprocessors: {
+    //   // source files, that you wanna generate coverage for
+    //   // do not include tests or libraries
+    //   // (these files will be instrumented by Istanbul)
+    //   'app/js/**/*.js': ['coverage']
+    // },
 
     // optionally, configure the reporter
-    coverageReporter: {
-      type : 'html',
-      dir : '../../../bin/reports/coverage/html/'
-    },
+    // coverageReporter: {
+    //   type : 'html',
+    //   dir : '../../../bin/reports/coverage/html/'
+    // },
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG

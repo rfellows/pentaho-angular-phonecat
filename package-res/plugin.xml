@@ -7,6 +7,7 @@
 
   <external-resources>
     <file context="requirejs">content/sample/resources/web/app/sample-require-js-cfg.js</file>
+    <file context="mantle">content/sample/resources/web/app/js/puc-plugin.js</file>
   </external-resources>
 
 </plugin>

@@ -1,9 +1,8 @@
 pen.define([
   'common-ui/angular',
   'angular-mocks',
-  'phonecat/controllers',
-  'phonecat/app'
-  ], function(angular) {
+  'phonecat/main'
+  ], function(angular, mocks, main, app, controllers) {
 
   'use strict';
 
@@ -19,7 +18,6 @@ pen.define([
     });
 
     beforeEach(module('phonecatApp'));
-    beforeEach(module('phonecatServices'));
 
     describe('PhoneListCtrl', function(){
       var scope, ctrl, $httpBackend;
