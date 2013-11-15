@@ -18,7 +18,7 @@
 
         <ul class="phones">
           <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
-            <a href="" ng-click="goNext('/phones/{{phone.id}}')" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            <a href="" ng-click="goNext('/phones/{{phone.id}}')" class="thumb"><img ng-src="{{buildResourceUrl(phone.imageUrl)}}"></a>
             <a href="" ng-click="goNext('/phones/{{phone.id}}')">{{phone.name}}</a>
             <p>{{phone.snippet}}</p>
           </li>
