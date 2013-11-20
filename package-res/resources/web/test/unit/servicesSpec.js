@@ -2,24 +2,30 @@ pen.define([
   'common-ui/angular',
   'angular-mocks',
   'phonecat/services'
-  ], 
-  function(angular, mocks, services) {
+],
+function(angular, mocks, services, Resource) {
 
 	'use strict';
-
+	
+	
 	describe('factory', function() {
+		
+		beforeEach(function(){
+			// Register Factory to new module
+			services(angular.module('myFactoryMod', ['ngResource']).factory);
 
-	    // Provide the registration of the filter before each test
-	    beforeEach(module(function($provide) {
-	      services($provide.factory); 
-	    }));
+			// Require this module for test
+			module("myFactoryMod")
+		});
 
 		describe('phones', function() {
 
-			it('retrieve a phone based on the phone id',
-				module(function(Phone) {
-		      		expect(true).toEqual(false);
-			    }));
+			it('should retrieve a phone based on the phone id', 
+				inject(function(Phone) {
+					expect(Phone).toBeDefined();
+				}));
+				
+
 		});
 	});
 

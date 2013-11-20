@@ -7,5 +7,5 @@ pen.require([
 
   var plugin = new AnimatedAngularPluginHandler.Plugin('phonecatApp', appConfig).register();
 
-  angular.bootstrap(document , ['phonecatApp']);
+  angular.bootstrap(document, ['phonecatApp']);
 });
