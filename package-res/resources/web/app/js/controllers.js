@@ -42,6 +42,7 @@ pen.define([
 		function PhoneListCtrl($scope, Phone) {
 		  $scope.phones = Phone.query();
 		  $scope.orderProp = 'age';
+		  $scope.buildResourceUrl = Util.buildResourceUrl;
 		}
 
 		function PhoneDetailCtrl($scope, $routeParams, Phone) {

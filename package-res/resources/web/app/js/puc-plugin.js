@@ -1,16 +1,9 @@
 pen.require([
   'mantle/puc-api/pucAngularApi',
   'phonecat/app'
-  ], function(PentahoPluginHandler, app) {
+  ], function(PentahoPluginHandler, appConfig) {
   
-  var angularModuleConfig = {
-    routerCallback : app.getRoutes,
-    controllerCallback : app.getControllers,
-    serviceCallback : app.getServices,
-    filterCallback : app.getFilters
-  }
-
-  var plugin = new PentahoPluginHandler.PUCAngularPlugin(angularModuleConfig).register();
+  var plugin = new PentahoPluginHandler.Plugin(appConfig).register();
 
   pen.openSample = function() {
     plugin.goNext('/phones');
