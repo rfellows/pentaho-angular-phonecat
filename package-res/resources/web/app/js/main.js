@@ -5,7 +5,7 @@ pen.require([
   "phonecat/app"
   ], function(angular, Route, AnimatedAngularPluginHandler, appConfig){
 
-  var plugin = new AnimatedAngularPluginHandler.Plugin('phonecatApp', appConfig).register();
+  var plugin = new AnimatedAngularPluginHandler.Plugin(appConfig).register();
 
-  angular.bootstrap(document, ['phonecatApp']);
+  angular.bootstrap(document, [appConfig.moduleName]);
 });

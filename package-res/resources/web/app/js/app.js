@@ -37,6 +37,7 @@ pen.define(deps, function(angular, Route, AnimatedAngularPluginHandler, controll
   }
 
 	return {
+    moduleName: 'phonecatApp',
     routerCallback : routes,
     controllerCallback : controllers,
     factoryCallback : services,
