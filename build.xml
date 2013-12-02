@@ -19,7 +19,7 @@
     <unzip dest="${js.expanded.lib.dir}" overwrite="true">
       <fileset file="${js.lib.dir}/*.zip" />
       <patternset>
-        <!-- <exclude name="**/*.jar"/> -->
+        <exclude name="**/*.jar"/>
         <exclude name="**/plugin*.xml"/>
         <exclude name="**/settings.xml"/>
         <exclude name="**/themes.xml"/>
@@ -56,7 +56,7 @@
       </else>
     </if>
   </target>
-<!-- 
+
   <target name="dist-js" depends="quick-build.js, subfloor-js.dist-js">
   </target>
 
@@ -68,6 +68,13 @@
         <include name="**/*"/>
       </fileset>
     </copy>
+    <exec executable="node">
+      <arg value="node_modules/requirejs/bin/r.js"/>
+      <arg value="-o"/>
+      <arg value="build-res/javascript.build.js"/>
+    </exec>
+
+<!--
     <path id="build.classpath">
       <fileset dir="${js.expanded.lib.dir}/pentaho-js-build/libs">
         <include name="*.jar" />
@@ -80,8 +87,9 @@
                 maxmemory="1024m"
                 args="${js.expanded.lib.dir}/pentaho-js-build/r.js -o build-res/javascript.build.js">
     </java>
-  </target>
- -->
+ -->  
+</target>
+
 
   <!-- Override assembly of the artifacts to be packaged so we can remove un-needed js files -->
   <target name="assemble" depends="assemble.init,assemble.copy-libs">

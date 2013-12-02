@@ -1,7 +1,7 @@
 pen.define([
   'common-ui/angular',
   'angular-mocks',
-  'phonecat/filters'
+  '_sample_/filters/filters'
   ], 
   function(angular, mocks, filters) {
 

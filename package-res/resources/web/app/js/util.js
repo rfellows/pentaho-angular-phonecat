@@ -3,7 +3,7 @@ pen.define([], function(){
 
   var urlPrefix = "";
   if( typeof(CONTEXT_PATH) != "undefined" ) {
-    urlPrefix = CONTEXT_PATH + "content/sample/resources/web/app/";
+    urlPrefix = CONTEXT_PATH + "content/_sample_/resources/web/app/";
   }
 
   var Util = {

@@ -27,7 +27,7 @@ requirejs.config({
     'common-ui/jquery': 'lib/provided/common-ui/resources/web/jquery/jquery-1.9.1.min',
     'common-ui/AnimatedAngularPluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/animatedAngularPluginHandler',
 
-    'phonecat': 'js'
+    '_sample_': 'js'
   },
 
   shim: {

@@ -1,7 +1,12 @@
-'use strict';
+var deps = [  'common-ui/angular',
+  'angular-mocks',
+  '_sample_/directives/directives'];
 
-/* jasmine specs for directives go here */
+pen.define(deps, function() {
+  'use strict';
 
-describe('directives', function() {
+  describe('directives', function() {
 
+  });
 });
+

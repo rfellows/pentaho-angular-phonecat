@@ -1,79 +1,52 @@
 pen.define([
   'common-ui/angular',
   'angular-mocks',
-  'phonecat/main'
+  '_sample_/main'
   ], function(angular, mocks, main) {
 
   'use strict';
 
   /* jasmine specs for controllers go here */
-  describe('PhoneCat controllers', function() {
+  describe('_sample_ controllers', function() {
 
     beforeEach(function(){
-      this.addMatchers({
-        toEqualData: function(expected) {
-          return angular.equals(this.actual, expected);
-        }
-      });
+      module('_sample_App');
     });
 
-    beforeEach(function(){
-      module('phonecatApp')
-    });
+    describe('View1Ctrl', function(){
+      var scope, ctrl;
 
-    describe('PhoneListCtrl', function(){
-      var scope, ctrl, $httpBackend;
-
-      beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
-        $httpBackend = _$httpBackend_;
-        $httpBackend.expectGET('phones/phones.json').
-            respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-
+      beforeEach(inject(function($rootScope, $controller) {
+        // set up a fresh scope for each test
         scope = $rootScope.$new();
-        ctrl = $controller('PhoneListCtrl', {$scope: scope});
+        ctrl = $controller('View1Ctrl', {$scope: scope});
       }));
 
 
-      it('should create "phones" model with 2 phones fetched from xhr', function() {
-        expect(scope.phones.length).toEqual(0);
-        $httpBackend.flush();
-
-        expect(scope.phones).toEqualData(
-            [{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      it('should set the greeting when sayHello is called', function() {
+        expect(scope.greeting).toBe("");
+        scope.sayHello();
+        expect(scope.greeting).not.toBe("");
       });
 
 
-      it('should set the default value of orderProp model', function() {
-        expect(scope.orderProp).toBe('age');
+      it('should set the default value of title', function() {
+        expect(scope.title).toBe('Pentaho-Angular Seed Project');
       });
     });
 
 
-    describe('PhoneDetailCtrl', function(){
-      var scope, $httpBackend, ctrl,
-          xyzPhoneData = function() {
-            return {
-              name: 'phone xyz',
-                  images: ['image/url1.png', 'image/url2.png']
-            }
-          };
+    describe('View2Ctrl', function(){
+      var scope, ctrl
 
-
-      beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
-        $httpBackend = _$httpBackend_;
-        $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData());
-
-        $routeParams.phoneId = 'xyz';
+      beforeEach(inject(function($rootScope, $controller) {
         scope = $rootScope.$new();
-        ctrl = $controller('PhoneDetailCtrl', {$scope: scope});
+        ctrl = $controller('View2Ctrl', {$scope: scope});
       }));
 
 
-      it('should fetch phone detail', function() {
-        expect(scope.phone).toEqualData({});
-        $httpBackend.flush();
-
-        expect(scope.phone).toEqualData(xyzPhoneData());
+      it('should set the title by default', function() {
+        expect(scope.title).toBe('View2');
       });
     });
   });
