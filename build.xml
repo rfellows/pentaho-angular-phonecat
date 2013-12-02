@@ -39,7 +39,7 @@
 
   <available file="karma" filepath="${env.PATH}" property="karma-is-available" />
 
-  <target name="test-js" depends="install-antcontrib, npm-install, resolve-js">
+  <target name="test-js" depends="install-antcontrib, npm-install">
     <if>
       <isset property="karma-is-available" />
       <then>
@@ -73,22 +73,7 @@
       <arg value="-o"/>
       <arg value="build-res/javascript.build.js"/>
     </exec>
-
-<!--
-    <path id="build.classpath">
-      <fileset dir="${js.expanded.lib.dir}/pentaho-js-build/libs">
-        <include name="*.jar" />
-      </fileset>
-    </path>
-    <java classname="org.mozilla.javascript.tools.shell.Main"
-                fork="true"
-                classpathref="build.classpath"
-                failonerror="true"
-                maxmemory="1024m"
-                args="${js.expanded.lib.dir}/pentaho-js-build/r.js -o build-res/javascript.build.js">
-    </java>
- -->  
-</target>
+  </target>
 
 
   <!-- Override assembly of the artifacts to be packaged so we can remove un-needed js files -->
