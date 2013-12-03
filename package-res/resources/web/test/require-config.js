@@ -4,10 +4,10 @@ var tests = Object.keys(window.__karma__.files).filter(function (file) {
 
 pen = {};
 pen.require = function() {
-    require.apply(this, arguments);
+    return require.apply(this, arguments);
 } 
 pen.define = function() {
-    define.apply(this, arguments);
+    return define.apply(this, arguments);
 }
 
 requirejs.config({

@@ -12,7 +12,7 @@
 
   <property name="js.requires.node" value="true"/>
   <property name="js.requires.karma" value="true"/>
-  <property name="js.karma.config" value="config/karma.conf.js"/>
+  <property name="js.karma.config" value="config/karma.ci.conf.js"/>
   <property environment="env"/>
 
   <target name="resolve-js" depends="resolve,subfloor-js.resolve-js">

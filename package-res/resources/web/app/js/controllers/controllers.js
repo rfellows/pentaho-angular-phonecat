@@ -2,11 +2,10 @@ pen.define([
 	"common-ui/angular",
 	"common-ui/angular-resource",
 	"common-ui/angular-route",
-	"common-ui/AnimatedAngularPluginHandler",
 	"_sample_/util"
 	],
 
-	function(angular, Resource, Route, AnimatedAngularPluginHandler, Utils){
+	function(angular, Resource, Route, Utils){
 		/* Controllers */
 		function View1Ctrl($scope, Hello) {
 		  $scope.title = 'Pentaho-Angular Seed Project';
@@ -26,7 +25,7 @@ pen.define([
 		}
 
 		var controllers = function($controller) {
-			// inject the scope, Hello & Utils services defined in services/services.js
+			// inject the scope, Hello service defined in services/services.js
 			$controller('View1Ctrl', ['$scope', 'Hello', View1Ctrl]);
 
 			$controller('View2Ctrl', ['$scope', '$routeParams', View2Ctrl]);

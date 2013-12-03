@@ -15,7 +15,7 @@ function(angular, mocks, services, Resource) {
 			services(angular.module('myServiceMod', ['ngResource']).service);
 
 			// Require this module for test
-			module("myServiceMod")
+			module("myServiceMod");
 		});
 
 		describe('Hello', function() {

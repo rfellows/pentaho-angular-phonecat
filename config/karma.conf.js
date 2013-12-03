@@ -5,7 +5,6 @@ module.exports = function (config) {
     frameworks: ['jasmine', 'requirejs'],
 
     files: [
-      // 'app/lib/common-ui/resources/web/require.js',
       {pattern: 'app/lib/**/*.js', included: false},
       {pattern: 'app/js/*.js', included: false},
       {pattern: 'app/js/**/*.js', included: false},
@@ -14,7 +13,10 @@ module.exports = function (config) {
     ],
 
     exclude: [
-      'app/standalone-require-config.js'
+      'app/standalone-require-config.js',
+
+      // don't run tests in dependencies
+      'app/lib/provided/**/*Spec.js'
     ],
 
     // auto run tests when files change

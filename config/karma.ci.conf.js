@@ -14,7 +14,10 @@ module.exports = function (config) {
     ],
 
     exclude: [
-      'app/js/main.js'
+      'app/js/main.js',
+
+      // don't run tests in dependencies
+      'app/lib/provided/**/*Spec.js'
     ],
 
     // auto run tests when files change
