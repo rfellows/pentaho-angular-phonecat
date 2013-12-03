@@ -6,7 +6,7 @@
   </static-paths>
 
   <external-resources>
-    <file context="requirejs">content/_sample_/resources/web/app/sample-require-js-cfg.js</file>
+    <file context="requirejs">content/_sample_/resources/web/app/_sample_-require-js-cfg.js</file>
     <file context="mantle">content/_sample_/resources/web/app/js/puc-plugin.js</file>
   </external-resources>
 

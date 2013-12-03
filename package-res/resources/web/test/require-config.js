@@ -22,10 +22,16 @@ requirejs.config({
     'angular-scenario': 'lib/provided/common-ui/resources/web/angular/angular-scenario',
 
     'common-ui/PluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/pluginHandler',
+    'common-ui/Plugin': 'lib/provided/common-ui/resources/web/plugin-handler/plugin',
     'common-ui/AngularPluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/angularPluginHandler',
+    'common-ui/AngularPlugin': 'lib/provided/common-ui/resources/web/plugin-handler/angularPlugin',
+    'common-ui/AnimatedAngularPluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/animatedAngularPluginHandler',
+    'common-ui/AnimatedAngularPlugin': 'lib/provided/common-ui/resources/web/plugin-handler/animatedAngularPlugin',
+
     'common-ui/angular-animate': 'lib/provided/common-ui/resources/web/angular/angular-animate',
     'common-ui/jquery': 'lib/provided/common-ui/resources/web/jquery/jquery-1.9.1.min',
-    'common-ui/AnimatedAngularPluginHandler': 'lib/provided/common-ui/resources/web/plugin-handler/animatedAngularPluginHandler',
+    'common-ui/ring': 'lib/provided/common-ui/resources/web/ring/ring',
+    'underscore': 'lib/provided/common-ui/resources/web/underscore/underscore',
 
     '_sample_': 'js'
   },
@@ -39,7 +45,9 @@ requirejs.config({
     
     'common-ui/jquery': { exports: '$' },
     'common-ui/PluginHandler': { deps: ['common-ui/jquery'] },
-    'common-ui/angular-animate': { deps: ['common-ui/angular'] }
+    'common-ui/angular-animate': { deps: ['common-ui/angular'] },
+    'underscore': { exports: '_' },
+    'common-ui/ring': { deps: ['underscore'], exports: 'ring' }
   },
 
   // ask Require.js to load these files (all our tests)

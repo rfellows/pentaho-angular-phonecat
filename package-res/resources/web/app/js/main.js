@@ -1,11 +1,12 @@
 pen.require([
   "common-ui/angular", 
   "common-ui/angular-route",
-  "common-ui/AnimatedAngularPluginHandler",
+  "common-ui/AnimatedAngularPlugin",
   "_sample_/app"
-  ], function(angular, Route, AnimatedAngularPluginHandler, appConfig){
+  ], function(angular, Route, AnimatedAngularPlugin, appConfig){
 
-  var plugin = new AnimatedAngularPluginHandler.Plugin(appConfig).register();
+  var plugin = new AnimatedAngularPlugin(appConfig);
+  plugin.register();
 
   angular.bootstrap(document, [appConfig.moduleName]);
 });

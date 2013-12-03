@@ -1,9 +1,9 @@
 pen.require([
-  'mantle/puc-api/pucAngularApi',
+  'mantle/puc-api/pucAngularPlugin',
   '_sample_/app'
-  ], function(PentahoPluginHandler, appConfig) {
+  ], function(PUCAngularPlugin, appConfig) {
   
-  var plugin = new PentahoPluginHandler.Plugin(appConfig).register();
+  var plugin = new PUCAngularPlugin(appConfig).register();
 
   pen.openSample = function() {
     plugin.goNext('/view1');

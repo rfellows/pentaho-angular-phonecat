@@ -13,7 +13,9 @@ var deps = [
 
 pen.define(deps, function(angular, Route, AnimatedAngularPluginHandler, controllers, services, filters, Util){
   'use strict';
-	var app = AnimatedAngularPluginHandler.module('_sample_App', ['ui.bootstrap', 'ngResource']);
+	// var app = AnimatedAngularPluginHandler.module('_sample_App', ['ui.bootstrap', 'ngResource']);
+  var pluginHandler = new AnimatedAngularPluginHandler();
+  pluginHandler.module('_sample_App', ['ui.bootstrap', 'ngResource']);
 
   var routes = function($routeProvider) {
     $routeProvider.
@@ -34,6 +36,7 @@ pen.define(deps, function(angular, Route, AnimatedAngularPluginHandler, controll
     routerCallback     : routes,
     controllerCallback : controllers,
     serviceCallback    : services,
-    filterCallback     : filters
+    filterCallback     : filters,
+    pluginHandler      : pluginHandler
   };
 });

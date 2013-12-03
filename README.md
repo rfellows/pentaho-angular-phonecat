@@ -17,8 +17,9 @@ This seed project is intended to be used as a starting point for a developer who
 3. Run the unit tests: `ant resolve-js test-js`
 4. Try it in standalone mode: see the "Running the app in Standalone mode" section.
 5. Initialze a new git repository from it using `git init`.
-6. Replace all instances of `_sample_` in all files. That is just a placeholder name for the plugin.
-7. Re-test
+6. Replace all instances of `_sample_` in all files to some new plugin name of your choosing. That is just a placeholder name for the plugin.
+7. Rename this file `package-res/resources/web/app/_sample_-require-js-cfg.js` to reflect that same plugin name.
+8. Re-test
 
 #### Pluging into PUC
 1. Build an archive of the plugin contents: `ant clean-all clean-js resolve-js package`
